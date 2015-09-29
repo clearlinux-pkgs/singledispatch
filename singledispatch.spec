@@ -4,7 +4,7 @@
 #
 Name     : singledispatch
 Version  : 3.4.0.3
-Release  : 8
+Release  : 9
 URL      : https://pypi.python.org/packages/source/s/singledispatch/singledispatch-3.4.0.3.tar.gz
 Source0  : https://pypi.python.org/packages/source/s/singledispatch/singledispatch-3.4.0.3.tar.gz
 Summary  : This library brings functools.singledispatch from Python 3.4 to Python 2.6-3.3.
