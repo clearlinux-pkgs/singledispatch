@@ -4,13 +4,14 @@
 #
 Name     : singledispatch
 Version  : 3.4.0.3
-Release  : 18
+Release  : 19
 URL      : https://pypi.python.org/packages/source/s/singledispatch/singledispatch-3.4.0.3.tar.gz
 Source0  : https://pypi.python.org/packages/source/s/singledispatch/singledispatch-3.4.0.3.tar.gz
 Summary  : This library brings functools.singledispatch from Python 3.4 to Python 2.6-3.3.
 Group    : Development/Tools
 License  : MIT
 Requires: singledispatch-python
+Requires: six
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : python-dev
@@ -40,12 +41,12 @@ python components for the singledispatch package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1484575475
+export SOURCE_DATE_EPOCH=1489263996
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1484575475
+export SOURCE_DATE_EPOCH=1489263996
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
