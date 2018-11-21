@@ -4,56 +4,64 @@
 #
 Name     : singledispatch
 Version  : 3.4.0.3
-Release  : 19
-URL      : https://pypi.python.org/packages/source/s/singledispatch/singledispatch-3.4.0.3.tar.gz
-Source0  : https://pypi.python.org/packages/source/s/singledispatch/singledispatch-3.4.0.3.tar.gz
+Release  : 20
+URL      : https://files.pythonhosted.org/packages/d9/e9/513ad8dc17210db12cb14f2d4d190d618fb87dd38814203ea71c87ba5b68/singledispatch-3.4.0.3.tar.gz
+Source0  : https://files.pythonhosted.org/packages/d9/e9/513ad8dc17210db12cb14f2d4d190d618fb87dd38814203ea71c87ba5b68/singledispatch-3.4.0.3.tar.gz
 Summary  : This library brings functools.singledispatch from Python 3.4 to Python 2.6-3.3.
 Group    : Development/Tools
 License  : MIT
-Requires: singledispatch-python
+Requires: singledispatch-python = %{version}-%{release}
+Requires: singledispatch-python3 = %{version}-%{release}
 Requires: six
-BuildRequires : pbr
-BuildRequires : pip
-BuildRequires : python-dev
-BuildRequires : python3-dev
-BuildRequires : setuptools
+BuildRequires : buildreq-distutils3
 BuildRequires : six
 
 %description
-==============
 singledispatch
-==============
-`PEP 443 <http://www.python.org/dev/peps/pep-0443/>`_ proposed to expose
-a mechanism in the ``functools`` standard library module in Python 3.4
-that provides a simple form of generic programming known as
-single-dispatch generic functions.
+        ==============
 
 %package python
 Summary: python components for the singledispatch package.
 Group: Default
+Requires: singledispatch-python3 = %{version}-%{release}
 
 %description python
 python components for the singledispatch package.
+
+
+%package python3
+Summary: python3 components for the singledispatch package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the singledispatch package.
 
 
 %prep
 %setup -q -n singledispatch-3.4.0.3
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1489263996
-python2 setup.py build -b py2
-python3 setup.py build -b py3
+export SOURCE_DATE_EPOCH=1542759106
+python3 setup.py build
 
 %install
-export SOURCE_DATE_EPOCH=1489263996
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build  install --root=%{buildroot}
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python*/*
+
+%files python3
+%defattr(-,root,root,-)
+/usr/lib/python3*/*
