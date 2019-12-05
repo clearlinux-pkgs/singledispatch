@@ -4,7 +4,7 @@
 #
 Name     : singledispatch
 Version  : 3.4.0.3
-Release  : 25
+Release  : 26
 URL      : https://files.pythonhosted.org/packages/d9/e9/513ad8dc17210db12cb14f2d4d190d618fb87dd38814203ea71c87ba5b68/singledispatch-3.4.0.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/d9/e9/513ad8dc17210db12cb14f2d4d190d618fb87dd38814203ea71c87ba5b68/singledispatch-3.4.0.3.tar.gz
 Summary  : This library brings functools.singledispatch from Python 3.4 to Python 2.6-3.3.
