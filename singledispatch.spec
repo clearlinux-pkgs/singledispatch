@@ -4,7 +4,7 @@
 #
 Name     : singledispatch
 Version  : 3.6.2
-Release  : 42
+Release  : 43
 URL      : https://files.pythonhosted.org/packages/9d/22/e55f573ff772600858e4cb91b05f6e17edb8d4636a8af0039ceb668b51ee/singledispatch-3.6.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/9d/22/e55f573ff772600858e4cb91b05f6e17edb8d4636a8af0039ceb668b51ee/singledispatch-3.6.2.tar.gz
 Summary  : Backport functools.singledispatch from Python 3.4 to Python 2.6-3.3.
