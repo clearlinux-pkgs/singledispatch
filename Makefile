@@ -1,5 +1,5 @@
 PKG_NAME := singledispatch
-URL = https://files.pythonhosted.org/packages/9d/22/e55f573ff772600858e4cb91b05f6e17edb8d4636a8af0039ceb668b51ee/singledispatch-3.6.2.tar.gz
+URL = https://files.pythonhosted.org/packages/18/56/db18b37e2e310dfc6e0903e36f40d63c01d443455e7f566ccc96c55e8267/singledispatch-3.7.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
